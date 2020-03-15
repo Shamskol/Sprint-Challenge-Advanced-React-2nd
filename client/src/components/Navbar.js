@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import  {useDarkMode}  from "../hooks/useDarkMode";
+import { useDarkMode } from "../hooks/useDarkMode";
 //import {useLocalStorage} from "../../hooks/useLocalStorage";
 
 const Navbar = () => {
@@ -8,8 +8,7 @@ const Navbar = () => {
   const toggleMode = e => {
     e.preventDefault();
     setDarkMode(!darkMode);
-
-  }
+  };
 
   return (
     <StyledNav>
@@ -17,7 +16,9 @@ const Navbar = () => {
         <h1 className="world-cup">Women's World Cup</h1>
         <div className="dark-mode__toggle">
           <div
-            onClick={toggleMode} className={darkMode ? "toggle toggled" : "toggle"}
+            onClick={toggleMode}
+            className={darkMode ? "toggle toggled" : "toggle"}
+            data-testid="dark-mode-btn"
           />
         </div>
       </nav>
@@ -47,11 +48,10 @@ const StyledNav = styled.div`
     width: 40px;
   }
   .navbar {
-    align-items: center;
     border-bottom: 1px solid rgb(221, 221, 221);
     display: flex;
     height: 70px;
-    justify-content: space-between;
+    justify-content:space-evenly;
     padding: 0 3%;
     width: 100%;
 
@@ -61,7 +61,7 @@ const StyledNav = styled.div`
   }
   .world-cup {
     text-align: center;
-    margin-left: 140px;
+    margin: 0, auto;
   }
 `;
 

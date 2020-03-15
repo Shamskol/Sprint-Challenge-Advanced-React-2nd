@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent} from "@testing-library/react";
 import Navbar from "./Navbar";
 
 test("renders Navbar header", () => {
@@ -13,7 +13,16 @@ test("renders Navbar header", () => {
   expect(header).not.toBeFalsy();
 });
 
-test("toggle button ", () => {});
+test("should toggle darkMode", async () => {
+    const { getByTestId } = render(<Navbar />);
+    const darkModeBtn = getByTestId('dark-mode-btn');
+    console.log([...darkModeBtn.classList]);
+    expect([...darkModeBtn.classList].includes('toggled')).toBe(false);
+    await fireEvent.click(darkModeBtn);
+    console.log([...darkModeBtn.classList]);
+    expect([...darkModeBtn.classList].includes('toggled')).toBe(true);
+  
+});
 
 test("", () => {});
 
