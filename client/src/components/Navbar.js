@@ -8,8 +8,9 @@ const Navbar = () => {
   const toggleMode = e => {
     e.preventDefault();
     setDarkMode(!darkMode);
+
   }
-  useDarkMode(darkMode)
+
   return (
     <StyledNav>
       <nav className="navbar">
