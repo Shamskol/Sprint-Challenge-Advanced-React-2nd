@@ -23,9 +23,3 @@ test("should toggle darkMode", async () => {
     expect([...darkModeBtn.classList].includes('toggled')).toBe(true);
   
 });
-
-test("", () => {});
-
-test("", () => {});
-
-test("", () => {});

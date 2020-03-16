@@ -30,12 +30,13 @@ class PlayerList extends React.Component {
         <div className="player-list">
           {this.state.players.map(player => {
             return (
-               <div key={player.id}>
-                <h2>Name: {player.name}</h2>
-                <h2>Country: {player.country}</h2>
-                <h2> Searches: {player.searches}</h2>
-                <h2>id: {player.id}</h2>
-              </div>
+              <PlayerCard
+                key={player.id}
+                name= {player.name}
+                country= {player.country}
+                 searches= {player.searches}
+                id={player.id}
+              />
             );
           })}
         </div>
@@ -49,7 +50,7 @@ const StyledDiv = styled.div`
   margin: 0 auto;
   border: 1px solid black;
   border-radius: 15px;
-  background-color: blueviolet;
+  background-color: violet;
   text-align: center;
   padding: 20px;
   color: white;

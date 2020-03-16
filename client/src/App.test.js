@@ -2,10 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+
+
+test("renders App header", () => {
+//Arrange
+const {getByText} = render (<App/>);
+
+//Act
+const header = getByText(/We Welcome The World/i);
+//Assert
+expect(header);
+
 });
 
 
